@@ -17,7 +17,7 @@ $(document).ready(function(){
         },
         methods:{
             getAll:function (){
-                axios.get("/carros/api/professor/")
+                axios.get("/api/professor/")
                 .then(response => {
                     this.professores = response.data
                     console.log(this.professores);
@@ -28,7 +28,7 @@ $(document).ready(function(){
             },
             deleteProf:function(prof){
                 if(!confirm("Deseja excluir este item?")) return;
-                axios.delete(`/carros/api/professor/`+prof.id)
+                axios.delete("/api/professor/"+prof.id)
                 .then(response => {
                     console.log(response.data);
                     alert(response.data);
@@ -39,7 +39,7 @@ $(document).ready(function(){
                 });
             },
             novoProf:function(){
-                axios.post("/carros/api/professor/",this.professor)
+                axios.post("/api/professor/",this.professor)
                 .then(response => {
                     console.log(response.data);
                     alert(response.data);
@@ -61,7 +61,7 @@ $(document).ready(function(){
                 this.mostraBtnLimpar = false; 
                 this.mostraBtnSalvar = false;
                 this.mostraBtnAlterar = true;
-                axios.get("/carros/api/professor/"+prof.id)
+                axios.get("/api/professor/"+prof.id)
                 .then(response => {
                     this.professor = response.data
                     console.log(this.professor);
@@ -72,7 +72,7 @@ $(document).ready(function(){
                 });     
             },
             storeProf:function(){
-                axios.put("/carros/api/professor/",this.professor)
+                axios.put("/api/professor/",this.professor)
                 .then(response => {
                     console.log(response.data);
                     alert(response.data);

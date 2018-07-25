@@ -1,0 +1,12 @@
+{
+  "require": {
+    "slim/slim": "^3.0",
+    "tuupola/slim-basic-auth": "^2.0",
+    "gabordemooij/redbean": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    }
+  }
+}

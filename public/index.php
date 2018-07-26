@@ -23,6 +23,7 @@ $app = new Slim\App($config);
 // grouping the /api route, see Slim's group() method documentation for more
 $app->group('/api', function () use ($app) {
     $this->get('/redbean', function ($request, $response, $args) {
+        //professor = tabela que se quer usar
         $prof = R::findAll('professor');
         return $response->withJson(R::exportAll($prof));
     });

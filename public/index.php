@@ -24,7 +24,6 @@ $app = new Slim\App($config);
 $app->group('/api', function () use ($app) {
     $this->get('/redbean', function ($request, $response, $args) {
         $prof = R::findAll('professor');
-        //var_dump(R::exportAll($prof));
         return $response->withJson(R::exportAll($prof));
     });
 
